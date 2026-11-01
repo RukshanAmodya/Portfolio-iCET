@@ -11,5 +11,5 @@
     </linearGradient>
   </defs>
   <rect width="64" height="64" rx="14" fill="url(#tg-bg)"/>
-  <text x="32" y="33" font-family="Inter, Segoe UI, Helvetica, Arial, sans-serif" font-size="30" font-weight="700" letter-spacing="-1.5" fill="url(#tg-fg)" text-anchor="middle" dominant-baseline="central">TG</text>
+  <text x="32" y="33" font-family="'Plus Jakarta Sans', Inter, Segoe UI, sans-serif" font-size="28" font-weight="800" letter-spacing="-1" fill="url(#tg-fg)" text-anchor="middle" dominant-baseline="central">RA</text>
 </svg>
