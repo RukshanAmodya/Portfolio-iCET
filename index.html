@@ -115,6 +115,166 @@
         </div>
       </div>
     </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section" id="projects">
+      <div class="container">
+        <div class="section-title-wrap">
+          <p class="section-eyebrow">PORTFOLIO</p>
+          <h2 class="section-heading">Featured Works</h2>
+          <p class="section-subtext">A selection of production-grade Android apps, web platforms, and automated cloud services.</p>
+        </div>
+
+        <div class="projects-grid" id="projectsGrid">
+          <!-- Populated dynamically via main.js from actual project data -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience & Learning Journey Section -->
+    <section class="experience-section" id="experience">
+      <div class="container">
+        <div class="section-title-wrap">
+          <p class="section-eyebrow">MY JOURNEY</p>
+          <h2 class="section-heading">Experience &amp; Education</h2>
+          <p class="section-subtext">A timeline of academic milestones and startup ventures that shaped my engineering path.</p>
+        </div>
+
+        <div class="milestones-timeline" id="milestonesTimeline">
+          <!-- Populated dynamically via main.js from milestones data -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Live GitHub Contributions Section -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="section-title-wrap">
+          <p class="section-eyebrow">GET IN TOUCH</p>
+          <h2 class="section-heading">Let's Build Something Exceptional</h2>
+          <p class="section-subtext">Have a project in mind or want to collaborate? Send me a message or connect via GitHub.</p>
+        </div>
+
+        <!-- Live GitHub Contribution Heatmap Widget -->
+        <div class="github-heatmap-card" id="githubHeatmapCard">
+          <div class="heatmap-header">
+            <div class="heatmap-title-box">
+              <i class="fa-brands fa-github text-white"></i>
+              <div>
+                <h4 class="heatmap-heading">GitHub Activity &amp; Contributions</h4>
+                <p class="heatmap-sub">Live commits &amp; streaks pulled from GitHub</p>
+              </div>
+            </div>
+            <div class="heatmap-badges">
+              <span class="heatmap-badge"><i class="fa-solid fa-fire text-orange"></i> <span id="streakCount">5</span> Days Streak</span>
+              <span class="heatmap-badge"><i class="fa-solid fa-code text-cyan"></i> <span id="totalContribs">600+</span> Contributions</span>
+            </div>
+          </div>
+
+          <div class="heatmap-scroll-wrap">
+            <div class="heatmap-grid" id="heatmapGrid">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form & Info Grid -->
+        <div class="contact-grid">
+          <!-- Contact Direct Info -->
+          <div class="contact-info-card">
+            <h3 class="contact-card-title">Let's talk about your next project</h3>
+            <p class="contact-card-desc">
+              I'm always open to discussing web application development, machine learning pipelines, or joining forward-thinking teams.
+            </p>
+
+            <div class="contact-links-list">
+              <a href="mailto:nmr.amodya@gmail.com" class="contact-link-row">
+                <div class="contact-link-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div>
+                  <span class="contact-link-label">EMAIL</span>
+                  <span class="contact-link-val">nmr.amodya@gmail.com</span>
+                </div>
+              </a>
+
+              <a href="https://github.com/RukshanAmodya" target="_blank" rel="noopener" class="contact-link-row">
+                <div class="contact-link-icon"><i class="fa-brands fa-github"></i></div>
+                <div>
+                  <span class="contact-link-label">GITHUB</span>
+                  <span class="contact-link-val">github.com/RukshanAmodya</span>
+                </div>
+              </a>
+
+              <a href="https://linkedin.com/in/rukshan-amodya" target="_blank" rel="noopener" class="contact-link-row">
+                <div class="contact-link-icon"><i class="fa-brands fa-linkedin"></i></div>
+                <div>
+                  <span class="contact-link-label">LINKEDIN</span>
+                  <span class="contact-link-val">Rukshan Amodya</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Submission Form -->
+          <div class="contact-form-card">
+            <form id="contactForm" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contactName">Name</label>
+                  <input type="text" id="contactName" placeholder="Your name" required>
+                  <span class="error-text" id="nameError"></span>
+                </div>
+                <div class="form-group">
+                  <label for="contactEmail">Email</label>
+                  <input type="email" id="contactEmail" placeholder="your@email.com" required>
+                  <span class="error-text" id="emailError"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="contactSubject">Subject</label>
+                <input type="text" id="contactSubject" placeholder="Project Inquiry / Opportunity" required>
+                <span class="error-text" id="subjectError"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="contactMessage">Message</label>
+                <textarea id="contactMessage" rows="4" placeholder="Tell me about your project..." required></textarea>
+                <span class="error-text" id="messageError"></span>
+              </div>
+
+              <button type="submit" class="btn btn-white w-full" id="submitBtn">
+                <i class="fa-solid fa-paper-plane"></i> Send Message
+              </button>
+
+              <div class="form-alert" id="formAlert"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Semantic Footer -->
+    <footer class="portfolio-footer">
+      <div class="container footer-inner">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <img src="assets/logo.webp" alt="Rukshan Amodya" class="footer-logo">
+            <span class="footer-brand-name">amodya.dev</span>
+          </div>
+          <p class="footer-quote">Transforming complex challenges into elegant, resilient software.</p>
+          <div class="footer-socials">
+            <a href="https://github.com/RukshanAmodya" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://linkedin.com/in/rukshan-amodya" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="mailto:nmr.amodya@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2026 Rukshan Amodya. All rights reserved.</p>
+          <a href="#home" class="back-top-btn" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
+        </div>
+      </div>
+    </footer>
   </main>
 
 </body>
