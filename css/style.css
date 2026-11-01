@@ -986,3 +986,260 @@ ul, ol {
   color: #ffffff;
   transform: translateY(-3px);
 }
+
+/* Next.js Exact Match: Central Glowing Timeline Line & Traveling Orb */
+.timeline-wrapper-rel {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.timeline-axis-line {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 1rem;
+  bottom: 1rem;
+  transform: translateX(-50%);
+  width: 1px;
+  background-color: #262626;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.timeline-beam-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.2), #ffffff, #ffffff);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+  height: 0%;
+  transition: height 0.1s linear;
+}
+
+.timeline-traveling-orb {
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 14px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  z-index: 20;
+  box-shadow: 0 0 15px #ffffff, 0 0 30px #ffffff, 0 0 45px rgba(255, 255, 255, 0.9);
+  transition: top 0.1s linear;
+}
+
+.orb-ping-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-color: #ffffff;
+  animation: pingOrb 1.6s cubic-bezier(0, 0, 0.2, 1) infinite;
+  opacity: 0.75;
+}
+
+@keyframes pingOrb {
+  75%, 100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* 3-Column Desktop Grid Layout: [Left Card/Details - 120px Center Year Column - Right Card/Details] */
+.milestones-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  position: relative;
+  z-index: 12;
+}
+
+.milestone-row {
+  display: grid;
+  grid-template-columns: 1fr 120px 1fr;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.milestone-left-col {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.milestone-center-col {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.center-year-label {
+  position: absolute;
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--text-neutral-400);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.center-year-label.pos-left {
+  right: 1.5rem;
+  text-align: right;
+}
+
+.center-year-label.pos-right {
+  left: 1.5rem;
+  text-align: left;
+}
+
+.milestone-right-col {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.milestone-card {
+  width: 100%;
+  max-width: 480px;
+  background: rgba(13, 13, 13, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--border-radius-md);
+  padding: 1.8rem;
+  box-shadow: 0 4px 28px rgba(0, 0, 0, 0.5);
+  transition: all var(--transition-normal);
+}
+
+.milestone-card:hover {
+  background: #151515;
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-4px);
+}
+
+.milestone-badge-box {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.8rem;
+}
+
+.badge-icon-square {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  color: var(--color-primary);
+}
+
+.milestone-badge-type {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-neutral-400);
+}
+
+.milestone-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 0.35rem;
+}
+
+.milestone-org {
+  font-size: 0.9rem;
+  color: var(--text-neutral-400);
+  font-weight: 500;
+}
+
+/* Details Block */
+.milestone-details-block {
+  width: 100%;
+  max-width: 480px;
+  padding: 0.5rem;
+}
+
+.milestone-period {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-neutral-400);
+  margin-bottom: 0.75rem;
+}
+
+.milestone-bullets-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.2rem;
+}
+
+.milestone-bullet-item {
+  font-size: 0.875rem;
+  color: rgba(212, 212, 212, 0.9);
+  line-height: 1.6;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.bullet-caret {
+  color: var(--text-neutral-500);
+  font-size: 0.75rem;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.milestone-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.milestone-pill-tag {
+  font-size: 0.725rem;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--border-radius-full);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-neutral-400);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Mobile responsive timeline adjustments */
+@media screen and (max-width: 768px) {
+  .timeline-axis-line {
+    left: 18px;
+    transform: none;
+  }
+
+  .timeline-traveling-orb {
+    left: 18px;
+    transform: translate(-50%, -50%);
+  }
+
+  .milestone-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding-left: 2.5rem;
+  }
+
+  .milestone-center-col {
+    display: none;
+  }
+
+  .milestone-left-col, .milestone-right-col {
+    justify-content: flex-start;
+  }
+}

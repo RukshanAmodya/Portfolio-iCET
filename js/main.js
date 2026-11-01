@@ -445,28 +445,87 @@ function initMilestones() {
   const container = document.getElementById('milestonesTimeline');
   if (!container) return;
 
-  container.innerHTML = originalMilestones.map(m => `
-    <div class="milestone-row ${m.flipped ? 'flipped' : ''}">
+  function renderTitleCard(m) {
+    const iconClass = m.badge === 'EDUCATION' ? 'fa-graduation-cap' : 'fa-briefcase';
+    return `
       <div class="milestone-card">
         <div class="milestone-badge-box">
-          <i class="fa-solid fa-graduation-cap text-cyan"></i>
+          <div class="badge-icon-square">
+            <i class="fa-solid ${iconClass}"></i>
+          </div>
           <span class="milestone-badge-type">${m.badge}</span>
         </div>
         <h3 class="milestone-title">${m.title}</h3>
         <p class="milestone-org">${m.org}</p>
-        <div class="project-tags-list">
-          ${m.tags.map(t => `<span class="project-tag">${t}</span>`).join('')}
-        </div>
       </div>
+    `;
+  }
 
-      <div class="milestone-details-box">
-        <span class="milestone-year-pill">${m.year}</span>
+  function renderDetailsBlock(m) {
+    return `
+      <div class="milestone-details-block">
+        <p class="milestone-period">${m.year} – Milestones</p>
         <div class="milestone-bullets-list">
-          ${m.bullets.map(b => `<div class="milestone-bullet">${b}</div>`).join('')}
+          ${m.bullets.map(b => `
+            <div class="milestone-bullet-item">
+              <span class="bullet-caret">▸</span>
+              <span>${b}</span>
+            </div>
+          `).join('')}
+        </div>
+        <div class="milestone-tags-row">
+          ${m.tags.map(t => `<span class="milestone-pill-tag">${t}</span>`).join('')}
         </div>
       </div>
-    </div>
-  `).join('');
+    `;
+  }
+
+  container.innerHTML = originalMilestones.map(m => {
+    const leftContent = m.flipped ? renderDetailsBlock(m) : renderTitleCard(m);
+    const rightContent = m.flipped ? renderTitleCard(m) : renderDetailsBlock(m);
+    const yearPosClass = m.flipped ? 'pos-left' : 'pos-right';
+
+    return `
+      <div class="milestone-row">
+        <!-- Left Column -->
+        <div class="milestone-left-col">
+          ${leftContent}
+        </div>
+
+        <!-- Center 120px Column with Year Label -->
+        <div class="milestone-center-col">
+          <span class="center-year-label ${yearPosClass}">${m.year}</span>
+        </div>
+
+        <!-- Right Column -->
+        <div class="milestone-right-col">
+          ${rightContent}
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  // Scroll Tracking for Glowing Beam and Traveling Radiant Orb
+  const timelineWrapper = document.getElementById('timelineWrapper');
+  const beam = document.getElementById('timelineBeam');
+  const orb = document.getElementById('timelineOrb');
+
+  if (timelineWrapper && beam && orb) {
+    window.addEventListener('scroll', () => {
+      const rect = timelineWrapper.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      
+      // Calculate progress relative to viewport center
+      const start = rect.top;
+      const total = rect.height;
+      const current = (viewportHeight / 2) - start;
+      let progress = Math.min(Math.max(current / total, 0), 1);
+
+      const percent = (progress * 100).toFixed(1);
+      beam.style.height = `${percent}%`;
+      orb.style.top = `${percent}%`;
+    });
+  }
 }
 
 /* 7. Live GitHub Heatmap Contributions (Ported from ContactSection.tsx) */
