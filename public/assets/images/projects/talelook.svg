@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bgTale" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#141838" />
+      <stop offset="70%" stop-color="#090b1c" />
+      <stop offset="100%" stop-color="#020308" />
+    </radialGradient>
+    <linearGradient id="lensGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60a5fa" />
+      <stop offset="50%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#818cf8" />
+    </linearGradient>
+    <linearGradient id="neonCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+    <filter id="taleGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="600" height="600" rx="36" fill="url(#bgTale)" />
+  <rect width="596" height="596" x="2" y="2" rx="35" fill="none" stroke="rgba(96, 165, 250, 0.25)" stroke-width="2" />
+  
+  <circle cx="300" cy="255" r="140" fill="#38bdf8" opacity="0.14" filter="url(#taleGlow)" />
+
+  <!-- Camera Lens Outer Ring -->
+  <circle cx="300" cy="255" r="95" fill="#090d20" stroke="url(#lensGrad)" stroke-width="5" filter="url(#taleGlow)" />
+  <circle cx="300" cy="255" r="72" fill="#040610" stroke="rgba(56, 189, 248, 0.4)" stroke-width="2.5" />
+  
+  <!-- Eye-Contact Reticle & Iris Glow -->
+  <circle cx="300" cy="255" r="32" fill="url(#neonCyan)" filter="url(#taleGlow)" />
+  <circle cx="300" cy="255" r="16" fill="#040610" />
+  <circle cx="306" cy="249" r="6" fill="#fff" opacity="0.9" />
+
+  <!-- Teleprompter Script Overlay Stream Lines -->
+  <rect x="230" y="380" width="140" height="8" rx="4" fill="#38bdf8" opacity="0.9" />
+  <rect x="210" y="396" width="180" height="6" rx="3" fill="#818cf8" opacity="0.6" />
+  <rect x="245" y="410" width="110" height="5" rx="2.5" fill="#60a5fa" opacity="0.4" />
+
+  <!-- Crosshair Guides -->
+  <line x1="180" y1="255" x2="205" y2="255" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" />
+  <line x1="395" y1="255" x2="420" y2="255" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" />
+  <line x1="300" y1="135" x2="300" y2="160" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" />
+
+  <!-- Badge Label -->
+  <rect x="180" y="470" width="240" height="48" rx="24" fill="rgba(15, 20, 48, 0.9)" stroke="rgba(56, 189, 248, 0.4)" stroke-width="1.5" />
+  <text x="300" y="501" fill="#38bdf8" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="18" text-anchor="middle" letter-spacing="3">TALE LOOK</text>
+</svg>

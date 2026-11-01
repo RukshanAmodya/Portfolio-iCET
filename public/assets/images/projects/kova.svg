@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bgKova" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#380e1e" />
+      <stop offset="70%" stop-color="#1c060d" />
+      <stop offset="100%" stop-color="#0a0204" />
+    </radialGradient>
+    <linearGradient id="roseGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fb7185" />
+      <stop offset="50%" stop-color="#f43f5e" />
+      <stop offset="100%" stop-color="#e11d48" />
+    </linearGradient>
+    <filter id="roseGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="600" height="600" rx="36" fill="url(#bgKova)" />
+  <rect width="596" height="596" x="2" y="2" rx="35" fill="none" stroke="rgba(251, 113, 133, 0.2)" stroke-width="2" />
+  
+  <circle cx="300" cy="260" r="140" fill="#f43f5e" opacity="0.14" filter="url(#roseGlow)" />
+
+  <!-- Cinema Play Orb / Clapper -->
+  <circle cx="300" cy="260" r="100" fill="#20050e" stroke="url(#roseGrad)" stroke-width="4" filter="url(#roseGlow)" />
+  
+  <!-- Sleek Play Button -->
+  <polygon points="275,205 355,260 275,315" fill="url(#roseGrad)" filter="url(#roseGlow)" />
+  <polygon points="275,205 355,260 275,315" fill="#fff" opacity="0.2" />
+
+  <!-- Film Strip Rings / Accents -->
+  <circle cx="300" cy="260" r="125" fill="none" stroke="rgba(251, 113, 133, 0.3)" stroke-width="2" stroke-dasharray="8,10" />
+
+  <!-- Drama & Subtitle Floating Dots -->
+  <rect x="220" y="390" width="160" height="12" rx="6" fill="rgba(251, 113, 133, 0.4)" />
+  <rect x="250" y="412" width="100" height="8" rx="4" fill="rgba(251, 113, 133, 0.2)" />
+
+  <!-- Badge Label -->
+  <rect x="180" y="470" width="240" height="48" rx="24" fill="rgba(56, 14, 30, 0.9)" stroke="rgba(251, 113, 133, 0.4)" stroke-width="1.5" />
+  <text x="300" y="501" fill="#fb7185" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="18" text-anchor="middle" letter-spacing="3">KOVA STREAM</text>
+</svg>

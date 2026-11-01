@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#0f2b48" />
+      <stop offset="70%" stop-color="#071220" />
+      <stop offset="100%" stop-color="#02070e" />
+    </radialGradient>
+    <linearGradient id="atomGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+    <linearGradient id="coreGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#ef4444" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Background Card -->
+  <rect width="600" height="600" rx="36" fill="url(#bgGlow)" />
+  <rect width="596" height="596" x="2" y="2" rx="35" fill="none" stroke="rgba(56, 189, 248, 0.2)" stroke-width="2" />
+  
+  <!-- Ambient Orbit Glow -->
+  <circle cx="300" cy="270" r="140" fill="#38bdf8" opacity="0.1" filter="url(#glow)" />
+  
+  <!-- Orbit Ring 1 -->
+  <ellipse cx="300" cy="270" rx="160" ry="60" fill="none" stroke="url(#atomGrad)" stroke-width="4" transform="rotate(30 300 270)" opacity="0.85" />
+  <circle cx="430" cy="220" r="8" fill="#38bdf8" filter="url(#glow)" />
+  
+  <!-- Orbit Ring 2 -->
+  <ellipse cx="300" cy="270" rx="160" ry="60" fill="none" stroke="url(#atomGrad)" stroke-width="4" transform="rotate(-30 300 270)" opacity="0.85" />
+  <circle cx="170" cy="220" r="8" fill="#c084fc" filter="url(#glow)" />
+
+  <!-- Orbit Ring 3 -->
+  <ellipse cx="300" cy="270" rx="160" ry="60" fill="none" stroke="url(#atomGrad)" stroke-width="4" transform="rotate(90 300 270)" opacity="0.85" />
+  <circle cx="300" cy="110" r="8" fill="#818cf8" filter="url(#glow)" />
+  
+  <!-- Nucleus Core -->
+  <circle cx="300" cy="270" r="38" fill="url(#coreGrad)" filter="url(#glow)" />
+  <circle cx="292" cy="260" r="12" fill="#fff" opacity="0.4" />
+  
+  <!-- Floating Spline / Science Elements -->
+  <path d="M190 390 Q 300 350 410 390" fill="none" stroke="rgba(56, 189, 248, 0.4)" stroke-width="3" stroke-dasharray="6,6" />
+  
+  <!-- Badge Label -->
+  <rect x="180" y="470" width="240" height="48" rx="24" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(56, 189, 248, 0.4)" stroke-width="1.5" />
+  <text x="300" y="501" fill="#38bdf8" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="18" text-anchor="middle" letter-spacing="3">AP.LK PHYSICS</text>
+</svg>
