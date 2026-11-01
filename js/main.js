@@ -168,24 +168,44 @@ function initHeroRippleGrid() {
 function initLottieAnimations() {
   const welcomeTarget = document.getElementById('welcomeLottie');
   if (welcomeTarget && typeof lottie !== 'undefined') {
-    lottie.loadAnimation({
-      container: welcomeTarget,
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      path: 'assets/animations/welcome.json'
-    });
+    if (window.__WELCOME_ANIMATION__) {
+      lottie.loadAnimation({
+        container: welcomeTarget,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        animationData: window.__WELCOME_ANIMATION__
+      });
+    } else {
+      lottie.loadAnimation({
+        container: welcomeTarget,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'assets/animations/welcome.json'
+      });
+    }
   }
 
   const skillsTarget = document.getElementById('skillsLottie');
   if (skillsTarget && typeof lottie !== 'undefined') {
-    lottie.loadAnimation({
-      container: skillsTarget,
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      path: 'assets/animations/skills.json'
-    });
+    if (window.__SKILLS_ANIMATION__) {
+      lottie.loadAnimation({
+        container: skillsTarget,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        animationData: window.__SKILLS_ANIMATION__
+      });
+    } else {
+      lottie.loadAnimation({
+        container: skillsTarget,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'assets/animations/skills.json'
+      });
+    }
   }
 }
 
