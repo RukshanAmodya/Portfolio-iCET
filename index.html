@@ -51,5 +51,71 @@
     </nav>
   </header>
 
+  <main>
+    <!-- Hero Section with Interactive Canvas Ripple Grid -->
+    <section class="hero-section" id="home">
+      <!-- Interactive Grid Canvas Background -->
+      <canvas id="heroGridCanvas" class="hero-grid-canvas"></canvas>
+
+      <div class="container hero-container">
+        <!-- Left: Headline & Actions -->
+        <div class="hero-content">
+          <p class="hero-greeting">Hi there, I'm</p>
+          <h1 class="hero-title">Rukshan Amodya</h1>
+          <p class="hero-subtitle">Full-Stack Developer | Gen AI Enthusiast</p>
+          <p class="hero-bio">
+            As an undergraduate passionate about leveraging the power of code and AI, I
+            strive to create meaningful and innovative solutions. I explore how
+            technology can transform ideas into reality. With a keen interest in
+            generative AI and cutting-edge technologies, I am constantly honing my
+            skills to stay at the forefront of software engineering.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-white">View Projects</a>
+            <a href="#contact" class="btn btn-glass">Contact Me</a>
+          </div>
+        </div>
+
+        <!-- Right: Welcome Mascot Lottie Animation -->
+        <div class="hero-visual">
+          <div class="mascot-wrapper">
+            <div class="mascot-glow"></div>
+            <div id="welcomeLottie" class="mascot-lottie"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Integrated Skills Section with Dual Opposite Marquee -->
+      <div class="skills-integrated" id="skills">
+        <div class="container skills-header-container">
+          <div class="skills-heading-wrap">
+            <div id="skillsLottie" class="skills-lottie-icon"></div>
+            <div>
+              <p class="skills-eyebrow">WHAT I WORK WITH</p>
+              <h2 class="skills-title">Skills &amp; Expertise</h2>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dual Marquee Carousel with Fade Edge Overlays -->
+        <div class="marquee-viewport">
+          <div class="marquee-fade-left"></div>
+          <div class="marquee-fade-right"></div>
+
+          <!-- Row 1: Scrolling Left -->
+          <div class="marquee-track track-left" id="marqueeTrack1">
+            <!-- Dynamically populated via main.js -->
+          </div>
+
+          <!-- Row 2: Scrolling Right -->
+          <div class="marquee-track track-right" id="marqueeTrack2">
+            <!-- Dynamically populated via main.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
 </body>
 </html>
