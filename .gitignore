@@ -1,0 +1,6 @@
+# System and environment files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
